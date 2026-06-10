@@ -39,4 +39,4 @@ You are logged in.
 2. Open the generated folder in VSCode.
 3. Press F1 (VSCode) and type `Dev Containers: Reopen in container`. Select it. The container should boot.
 
-You are good to go.
+You are good to go (The lower left corner of VSCode should display `Dev Container: Java & PostgreSQL @ ...`).
