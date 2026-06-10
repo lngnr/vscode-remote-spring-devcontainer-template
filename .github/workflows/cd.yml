@@ -1,0 +1,33 @@
+name: Build artifact
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build-java-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Build project and set static name
+        run: ./gradlew bootJar && mv "$(find build/libs -name *.jar | head -1)" build/libs/app.jar
+      - name: Create release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          tag_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+          release_name: Release ${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload artifact to release
+        uses: actions/upload-release-asset@v1
+        with:
+          asset_name: 'app.jar'
+          asset_content_type: application/java-archive
+          upload_url: '${{ steps.create_release.outputs.upload_url }}'
+          asset_path: build/libs/app.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

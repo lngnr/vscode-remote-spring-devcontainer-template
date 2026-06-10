@@ -1,27 +1,31 @@
 {
-	"name": "Java & PostgreSQL",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"features": {
-		"ghcr.io/devcontainers/features/java:1": {
-			"version": "none",
-			"installMaven": "false",
-			"installGradle": "true"
-		},
-		"ghcr.io/postfinance/devcontainer-features/docker-out:1": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"vscjava.vscode-spring-boot-dashboard",
-				"vscjava.vscode-spring-initializr",
-				"mikestead.dotenv",
-				"editorconfig.editorconfig",
-				"ms-azuretools.vscode-docker",
-                "ckolkman.vscode-postgres"
-			]
-		}
-	},
-	"shutdownAction": "stopContainer"
+    "name": "Java & PostgreSQL",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "none",
+            "installMaven": "false",
+            "installGradle": "true"
+        },
+        "ghcr.io/postfinance/devcontainer-features/docker-out:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-spring-boot-dashboard",
+                "vscjava.vscode-spring-initializr",
+                "mikestead.dotenv",
+                "editorconfig.editorconfig",
+                "ms-azuretools.vscode-docker",
+                "ckolkman.vscode-postgres",
+                "github.vscode-github-actions"
+            ],
+            "settings": {
+                "editor.formatOnSave": true
+            }
+        }
+    },
+    "shutdownAction": "stopContainer"
 }

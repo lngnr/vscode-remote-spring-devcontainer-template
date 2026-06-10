@@ -42,14 +42,15 @@ dependencies {
 	implementation 'org.liquibase:liquibase-core'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testRuntimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testCompileOnly 'org.projectlombok:lombok'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+	testRuntimeOnly 'com.h2database:h2'
 
     liquibaseRuntime sourceSets.main.output
     liquibaseRuntime 'org.postgresql:postgresql'
@@ -58,7 +59,7 @@ dependencies {
 
     liquibaseRuntime 'org.springframework.boot:spring-boot-starter-data-jpa'
     liquibaseRuntime 'info.picocli:picocli:4.7.6'
-    
+
 }
 
 final CHANGELOG = "src/main/resources/db/changelog/changes/" + getNewChangeLogName()
@@ -67,8 +68,8 @@ liquibase {
     activities {
         main {
             changelogFile "$CHANGELOG"
-            url "jdbc:postgresql://db:5432/" + System.getenv("POSTGRES_DB")
-            username System.getenv("POSTGRES_LIQUIBASE_SNAPSHOT")
+            url "jdbc:postgresql://db:5432/" + System.getenv("POSTGRES_LIQUIBASE_SNAPSHOT")
+            username System.getenv("POSTGRES_USER")
             password System.getenv("POSTGRES_PASSWORD")
             classpath "$rootDir"
             driver "org.postgresql.Driver"
