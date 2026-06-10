@@ -1,0 +1,19 @@
+databaseChangeLog:
+- changeSet:
+    id: 1781083161633-1
+    author: vscode (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: demoPK
+            name: id
+            type: UUID
+        - column:
+            name: hello
+            type: VARCHAR(255)
+        tableName: demo
+

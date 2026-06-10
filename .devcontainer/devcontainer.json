@@ -1,7 +1,8 @@
 {
-	"name": "Java",
-	"image": "mcr.microsoft.com/devcontainers/java:3-21-trixie",
-
+	"name": "Java & PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "none",
@@ -17,7 +18,8 @@
 				"vscjava.vscode-spring-initializr",
 				"mikestead.dotenv",
 				"editorconfig.editorconfig",
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+                "ckolkman.vscode-postgres"
 			]
 		}
 	},
