@@ -1,0 +1,25 @@
+{
+	"name": "Java",
+	"image": "mcr.microsoft.com/devcontainers/java:3-21-trixie",
+
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "false",
+			"installGradle": "true"
+		},
+		"ghcr.io/postfinance/devcontainer-features/docker-out:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-spring-boot-dashboard",
+				"vscjava.vscode-spring-initializr",
+				"mikestead.dotenv",
+				"editorconfig.editorconfig",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	"shutdownAction": "stopContainer"
+}
