@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.techniplas.demo.data.Demo;
 import com.techniplas.demo.data.DemoRepository;
@@ -16,6 +17,7 @@ public class DemoService {
 
     private final DemoRepository repository;
 
+    @Transactional
     public Demo createDemo(final String hello) {
         final Demo demo = new Demo();
         demo.setId(UUID.randomUUID());
@@ -23,6 +25,7 @@ public class DemoService {
         return repository.save(demo);
     }
 
+    @Transactional
     public List<Demo> getAll() {
         return repository.findAll();
     }
