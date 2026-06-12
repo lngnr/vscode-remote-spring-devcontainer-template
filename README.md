@@ -35,7 +35,7 @@ You are logged in.
 
 # 3. Clone the repository
 
-1. Open a new terminal (VSCode) and enter `git clone ...`. You might need to [authenticate](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) yourself.
+1. Open a new terminal (VSCode) and enter `git clone ...`. You might need to [authenticate](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to GitHub ([See how it's done](./GITHUB_AUTH.md)).
 2. Open the generated folder in VSCode.
 3. Press F1 (VSCode) and type `Dev Containers: Reopen in container`. Select it. The container should boot.
 
