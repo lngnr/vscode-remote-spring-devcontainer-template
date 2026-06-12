@@ -13,7 +13,6 @@ Your IDE is set up.
 2. [Install docker engine](https://docs.docker.com/engine/install/).
 3. Add a new user. E. g. (Ubuntu 26.04):
 ```bash
-
 NEW_USER_TO_ADD=...
 
 sudo useradd -d "/home/$NEW_USER_TO_ADD" -m -s /bin/bash
